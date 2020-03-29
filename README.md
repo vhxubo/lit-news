@@ -35,7 +35,7 @@ LitNews 目前新闻源:
 
 ## 应用下载
 
-[Windows](https://github.com/vhxubo/lit-news/releases/download/0.0.1/Setup.0.0.1.exe): 仅在 Window10 64bit 下测试
+[Windows](https://github.com/vhxubo/lit-news/releases/download/0.0.1/Setup.0.0.1.exe): 仅在 Windows 10 x64 下测试
 
 ## 本地构建
 
