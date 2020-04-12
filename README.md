@@ -3,6 +3,14 @@
 <blockquote>校内新闻样式不再将就</blockquote>
 </div>
 
+## 碎碎念
+
+目前界面不是特别美观，后面需要着力优化界面。
+
+下一步就是重构代码，还没半个月我都觉得是 :shit:山了。
+
+有什么问题请发 Issue 或邮箱: vhxubo@gmail.com
+
 ## 应用概述
 
 **LitNews: 洛阳理工学院新闻客户端**
@@ -15,19 +23,23 @@ LitNews 目前新闻源:
 
 ## 特色功能
 
+- 使用 [Photon](https://github.com/connors/photon) 构建界面
 - 规范化新闻列表，按照时间倒序展示
-- 使用 [typo.css](https://github.com/sofish/typo.css) 替换原有正文样式，构建最适合中文阅读的网页排版
+- 支持右键分享、使用默认浏览器打开
+    ![右键菜单](public/images/menu.png)
+- 修改原有正文样式
 
 ## 应用截图
 
-![教务处](https://raw.githubusercontent.com/vhxubo/lit-news/master/public/images/jwc.png)
-![新闻中心](https://raw.githubusercontent.com/vhxubo/lit-news/master/public/images/xwzx.png)
-![团委](https://raw.githubusercontent.com/vhxubo/lit-news/master/public/images/tw.png)
+![教务处](public/images/jwc.png)
+![新闻中心](public/images/xwzx.png)
+![团委](public/images/tw.png)
 
 ## TODO
 
+- [ ] 图标设计、界面优化
+- [ ] 支持响应式布局
 - [ ] 点击查看大图
-- [ ] 设置右键菜单，支持复制、分享、使用浏览器打开
 - [ ] 支持下载文件
 - [ ] 支持自定义 CSS
 - [ ] 提取内核，以支持命令行
@@ -35,7 +47,11 @@ LitNews 目前新闻源:
 
 ## 应用下载
 
-[Windows](https://github.com/vhxubo/lit-news/releases/download/0.0.1/Setup.0.0.1.exe): 仅在 Windows 10 x64 下测试
+[Windows](https://github.com/vhxubo/lit-news/releases): 仅在 Windows 10 x64 下测试
+
+## 更新日志
+
+详见 [CHANGELOG](CHANGELOG.md)
 
 ## 本地构建
 

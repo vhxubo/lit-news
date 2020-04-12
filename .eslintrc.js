@@ -16,6 +16,8 @@ module.exports = {
     'html'
   ],
   'rules': {
+    // allow no space before function
+    "space-before-function-paren": 0,
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await

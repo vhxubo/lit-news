@@ -1,21 +1,11 @@
 <template>
-  <div id="app" class="window">
+  <div class="window" id="app">
     <div class="fake-title-bar">
       <div class="handle-bar">
         <!-- 如果是windows系统 就加上模拟的操作按钮-->
-        <span
-          class="icon icon-minus"
-          @mouseover="overMin($event)"
-          @mouseleave="leaveMin($event)"
-          @click="minimizeWindow"
-        ></span>
-        <span class="icon icon-resize-full" @click="resizeWindow"></span>
-        <span
-          class="icon icon-cancel"
-          @mouseover="overClose($event)"
-          @mouseleave="leaveClose($event)"
-          @click="closeWindow"
-        ></span>
+        <span @click="minimizeWindow" class="icon icon-minus"></span>
+        <span @click="resizeWindow" class="icon icon-resize-full"></span>
+        <span @click="closeWindow" class="icon icon-cancel"></span>
       </div>
     </div>
     <Header />
@@ -32,27 +22,15 @@ export default {
     Header
   },
   methods: {
-    minimizeWindow () {
+    minimizeWindow() {
       const window = this.$electron.remote.BrowserWindow.getFocusedWindow()
       window.minimize()
     },
-    overMin ($event) {
-      $event.currentTarget.className = 'icon icon-minus-squared'
-    },
-    leaveMin ($event) {
-      $event.currentTarget.className = 'icon icon-minus'
-    },
-    closeWindow () {
+    closeWindow() {
       const window = this.$electron.remote.BrowserWindow.getFocusedWindow()
       window.close()
     },
-    overClose ($event) {
-      $event.currentTarget.className = 'icon icon-cancel-squared'
-    },
-    leaveClose ($event) {
-      $event.currentTarget.className = 'icon icon-cancel'
-    },
-    resizeWindow ($event) {
+    resizeWindow($event) {
       const window = this.$electron.remote.BrowserWindow.getFocusedWindow()
       if (window.isMaximized()) {
         window.unmaximize()
@@ -67,22 +45,36 @@ export default {
 </script>
 
 <style scoped>
+#app{
+  font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","HeitiSC","WenQuanYi Micro Hei",sans-serif;
+}
+
 .fake-title-bar {
   width: 100%;
-  height: 16px;
+  height: 20px;
   background-color: #f5f4f5;
   -webkit-app-region: drag;
 }
+
 .handle-bar {
   margin: 0;
   padding: 0;
   -webkit-app-region: no-drag;
   float: right;
-  padding-right: 4px;
+  display: flex;
+}
+
+.toolbar {
+  box-shadow: none !important;
 }
 
 span {
   margin: 0;
-  padding: 2px;
+  padding: 0 8px;
+}
+
+.icon:hover {
+  background-color: #c6c6c6;
+  cursor: pointer;
 }
 </style>
