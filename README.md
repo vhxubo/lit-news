@@ -49,6 +49,8 @@ LitNews 目前新闻源:
 
 [Windows](https://github.com/vhxubo/lit-news/releases): 仅在 Windows 10 x64 下测试
 
+[Linux](https://github.com/vhxubo/lit-news/releases): amd64版本,暂不支持其他架构
+
 ## 更新日志
 
 详见 [CHANGELOG](CHANGELOG.md)
