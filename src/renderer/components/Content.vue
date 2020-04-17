@@ -1,7 +1,7 @@
 <template>
   <div @click.right="openMenu" class="content">
-    <h3>{{newsPost.title}}</h3>
-    <div class="post" v-html="newsPost.post"></div>
+    <div class="content__title">{{newsPost.title}}</div>
+    <div class="content__post" v-html="newsPost.post"></div>
   </div>
 </template>
 <script>
@@ -80,23 +80,51 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss">
 .content {
-  padding: 0 20px;
-}
+  flex-grow: 1;
+  display: flex;
+  font-size: 3rem;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
 
-.post >>> * {
-  -moz-user-select: text !important;
-  -webkit-user-select: text !important;
-  -ms-user-select: text !important;
-  user-select: text !important;
-  cursor: text !important;
-  line-height: 1.8;
-  letter-spacing: 0.5px;
-}
+  @media only screen and (max-width: 37.5rem) {
+    display: none;
+  }
 
-.post >>> img.img_vsb_content {
-  width: 100%;
-  height: 100%;
+  &__title {
+    font-size: 3.8rem;
+    font-weight: 700;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+
+  &__post {
+    width: 100%;
+  }
+
+  &__post > p,
+  &__post > span {
+    padding: 0 4rem 0.5rem 4rem;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  &__post > p > img.img_vsb_content {
+    width: 100%;
+  }
+
+  &__footer {
+    text-align: center;
+    background-color: #f0f2f7;
+    width: 100%;
+    padding: 1rem 0;
+    margin-top: 2rem;
+
+    a {
+      font-size: inherit;
+    }
+  }
 }
 </style>

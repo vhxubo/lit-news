@@ -3,7 +3,6 @@ import axios from 'axios'
 
 import App from './App'
 import router from './router'
-import '../../static/css/photon.css'
 import bus from './utils/bus'
 
 Vue.prototype.$bus = bus

@@ -23,7 +23,7 @@ LitNews 目前新闻源:
 
 ## 特色功能
 
-- 使用 [Photon](https://github.com/connors/photon) 构建界面
+- 扁平化界面
 - 规范化新闻列表，按照时间倒序展示
 - 支持右键分享、使用默认浏览器打开
     ![右键菜单](public/images/menu.png)
