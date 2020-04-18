@@ -2,7 +2,7 @@
   <div class="sidebar">
     <ul class="news-list">
       <li
-        :class="[idx == index?'active':'']"
+        :class="[idx == index?'item-active':'']"
         :key="index"
         @click="isActive(index)"
         class="news-list__item"
@@ -82,5 +82,9 @@ export default {
   &__item-date {
     font-size: 2.6rem;
   }
+}
+
+.item-active {
+  background: #dedddb;
 }
 </style>

@@ -1,22 +1,35 @@
 <template>
-  <div @click.right="openMenu" class="content">
-    <div class="content__title">{{newsPost.title}}</div>
-    <div class="content__post" v-html="newsPost.post"></div>
+  <div @click.right="openMenu" @scroll="handleScroll" class="content">
+    <div class="content__title" v-if="newsPost.title">{{newsPost.title}}</div>
+    <div class="content__post" v-html="newsPost.post" v-if="newsPost.post"></div>
+    <div class="content__help" v-else>
+      <p></p>
+    </div>
+    <button @click="toTop" class="totop" v-if="toTopStatus">Go</button>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      newsPost: ''
+      newsPost: '',
+      toTopStatus: false
     }
   },
   mounted() {
     this.$bus.$on('g-news-post', newsPost => {
       this.newsPost = newsPost
+      this.$el.scrollTop = 0
     })
   },
   methods: {
+    handleScroll(event) {
+      if (event.target.scrollTop > 400) this.$data.toTopStatus = true
+      else this.$data.toTopStatus = false
+    },
+    toTop() {
+      this.$el.scrollTop = 0
+    },
     openMenu() {
       const newsPost = this.newsPost
       if (newsPost !== '') {
@@ -81,13 +94,35 @@ export default {
 }
 </script>
 <style lang="scss">
+.totop {
+  font-weight: 600;
+  width: 10rem;
+  height: 9rem;
+  position: absolute;
+  bottom: 8rem;
+  right: 6rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0px 0px 10px 2px #f0f2f7;
+
+  &:hover {
+    background-color: #f1f1f1;
+    color: #a8a8a8;
+  }
+}
+
 .content {
-  flex-grow: 1;
+  height: 100%;
+  overflow-y: scroll;
   display: flex;
-  font-size: 3rem;
   flex-direction: column;
+  flex-grow: 1;
+  font-size: 3rem;
   align-items: center;
-  overflow: auto;
 
   @media only screen and (max-width: 37.5rem) {
     display: none;
@@ -106,9 +141,8 @@ export default {
 
   &__post > p,
   &__post > span {
-    padding: 0 4rem 0.5rem 4rem;
+    padding: 0 4rem 1.5rem 4rem;
     line-height: 1.8;
-    margin: 0;
   }
 
   &__post > p > img.img_vsb_content {

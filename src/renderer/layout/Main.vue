@@ -1,6 +1,6 @@
 <template>
   <div class="main-page">
-    <div class="header">
+    <div class="header-box">
       <Header />
     </div>
     <div class="main">
@@ -36,11 +36,6 @@ export default {
   overflow: hidden;
 }
 
-.header {
-  font-size: 3rem;
-  user-select: none;
-}
-
 .main {
   display: flex;
   flex-direction: row;
@@ -49,7 +44,7 @@ export default {
   &__sidebar {
     width: 30%;
     overflow: hidden;
-    border-right: 0.5px solid #b5b5b5;
+    border-right: 1.5px solid #f6f6f5;
     user-select: none;
 
     &:hover {
@@ -59,7 +54,8 @@ export default {
 
   &__content {
     width: 70%;
-    overflow-y: auto;
+
+    background-color: #f9f9f9;
   }
 }
 </style>
