@@ -18,6 +18,9 @@ jobs:
         uses: actions/setup-node@v1
       - name: 'Install NPM dependencies'
         run: npm install
+      - name: 'Install windows-build-tools'
+        run: npm install --global windows-build-tools
+        if: matrix.os == windows-latest
       - name: 'Build LitNews'
         run: npm run build      
         env:
