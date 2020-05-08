@@ -16,7 +16,7 @@ jobs:
       - name: 'Install NPM dependencies'
         run: npm install
       - name: 'Install windows-build-tools'
-        run: npm install --global windows-build-tools
+        run: npm install --global --production windows-build-tools
       - name: 'Build LitNews'
         run: npm run build      
         env:
