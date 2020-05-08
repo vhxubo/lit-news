@@ -45,9 +45,9 @@ LitNews 目前新闻源:
 
 ## 应用下载
 
-[Windows](https://github.com/vhxubo/lit-news/releases): 仅在 Windows 10 x64 下测试
+使用 GitHub Actions 进行多端编译，尝试支持 Windows、Mac、Linux
 
-[Linux](https://github.com/vhxubo/lit-news/releases): amd64版本,暂不支持其他架构
+[Releases](https://github.com/vhxubo/lit-news/releases)
 
 ## 更新日志
 
