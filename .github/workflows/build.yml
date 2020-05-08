@@ -1,4 +1,4 @@
-name: Build lit-new
+name: Build LitNews
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@v1
       - name: 'Install NPM dependencies'
         run: npm install
-      - name: 'Build election-vue'
+      - name: 'Build LitNews'
         run: npm run build      
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
