@@ -5,7 +5,7 @@
     <div class="content__help" v-else>
       <p></p>
     </div>
-    <button @click="toTop" class="totop" v-if="toTopStatus">Go</button>
+    <button @click="toTop" class="totop" v-if="toTopStatus">Top</button>
   </div>
 </template>
 <script>
@@ -139,8 +139,11 @@ export default {
     width: 100%;
   }
 
-  &__post > p,
-  &__post > span {
+  table {
+    padding: 3rem 5rem;
+  }
+
+  p {
     padding: 0 4rem 1.5rem 4rem;
     line-height: 1.8;
   }

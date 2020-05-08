@@ -87,6 +87,7 @@ async function getNews(url) {
               $(this)
                 .parent('p')
                 .css('text-align', 'center')
+                .css('padding', '0')
             }
           }
         })
