@@ -1,4 +1,4 @@
-## :tada: 1.0.0
+## :tada: 1.0.0 2020.05.08
 
 ### :sparkles: 新增
 
@@ -8,6 +8,7 @@
 ### :bug: 修复 Bug
 
 - 清除团委多余标题
+- p and table css style
 
 ## :tada: 0.0.2
 

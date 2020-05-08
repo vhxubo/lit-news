@@ -5,10 +5,6 @@
 
 ## 碎碎念
 
-目前界面不是特别美观，后面需要着力优化界面。
-
-下一步就是重构代码，还没半个月我都觉得是 :shit:山了。
-
 有什么问题请发 Issue 或邮箱: vhxubo@gmail.com
 
 ## 应用概述
@@ -24,10 +20,11 @@ LitNews 目前新闻源:
 ## 特色功能
 
 - 扁平化界面
+- 统一文章样式
+- 快速返回顶部
 - 规范化新闻列表，按照时间倒序展示
 - 支持右键分享、使用默认浏览器打开
   ![右键菜单](public/images/menu.png)
-- 修改原有正文样式
 
 ## 应用截图
 
@@ -37,9 +34,10 @@ LitNews 目前新闻源:
 
 ## TODO
 
-- [ ] 图标设计、界面优化(tr td 样式，h1 h2、img 样式)
-- [ ] 支持响应式布局、支持主题切换
-- [ ] 夜间模式、返回顶部(优化滚动动画)
+- [ ] 图标设计
+- [ ] 支持响应式布局
+- [ ] 支持主题切换
+- [ ] 夜间模式
 - [ ] 点击查看大图
 - [ ] 获取下载进度
 - [ ] 提取内核，以支持命令行
@@ -80,4 +78,4 @@ npm run lint
 
 ---
 
-This project was generated from [electron-vue](https://github.com/SimulatedGREG/electron-vue) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about this project can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
+This project was generated from [electron-vue](https://github.com/SimulatedGREG/electron-vue) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about electron-vue can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).

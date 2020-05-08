@@ -47,6 +47,10 @@ export default {
     border-right: 1.5px solid #f6f6f5;
     user-select: none;
 
+    @media only screen and (min-width: 1300px) {
+      width: 25%;
+    }
+
     &:hover {
       overflow: overlay;
     }
@@ -54,8 +58,11 @@ export default {
 
   &__content {
     width: 70%;
-
     background-color: #f9f9f9;
+
+    @media only screen and (min-width: 1300px) {
+      width: 75%;
+    }
   }
 }
 </style>

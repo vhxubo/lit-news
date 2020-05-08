@@ -55,6 +55,10 @@ export default {
     list-style: none;
     align-items: center;
     cursor: pointer;
+
+    @media only screen and (min-width: 1300px) {
+      width: 25%;
+    }
   }
 }
 .btn {

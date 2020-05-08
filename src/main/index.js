@@ -26,9 +26,6 @@ function createWindow () {
     height: 600,
     useContentSize: true,
     width: 1000,
-    // backgroundColor: '#f5f5f4',
-    // frame: false,
-    // titleBarStyle: 'hidden',
     webPreferences: {
       webSecurity: false
     }
