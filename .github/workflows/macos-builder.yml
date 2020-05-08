@@ -15,6 +15,7 @@ jobs:
         uses: actions/setup-node@v1
       - name: 'Install NPM dependencies'
         run: npm install
+      - run: npm install electron-builder@latest -D
       - name: 'Build LitNews'
         run: npm run build      
         env:
