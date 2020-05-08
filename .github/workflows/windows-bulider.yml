@@ -1,0 +1,23 @@
+name: Windows Bulider
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: 'Setup node'
+        uses: actions/setup-node@v1
+      - name: 'Install NPM dependencies'
+        run: npm install
+      - name: 'Install windows-build-tools'
+        run: npm install --global windows-build-tools
+      - name: 'Build LitNews'
+        run: npm run build      
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
