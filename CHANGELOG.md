@@ -1,3 +1,15 @@
+## :tada: 1.0.0 2020.05.08
+
+### :sparkles: 新增
+
+- 重写界面
+- 支持返回顶部
+
+### :bug: 修复 Bug
+
+- 清除团委多余标题
+- p and table css style
+
 ## :tada: 0.0.2
 
 ### :sparkles: 新增

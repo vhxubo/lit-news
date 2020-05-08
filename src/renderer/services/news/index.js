@@ -87,12 +87,13 @@ async function getNews(url) {
               $(this)
                 .parent('p')
                 .css('text-align', 'center')
+                .css('padding', '0')
             }
           }
         })
         // 团委标题
-        if (url.indexOf('tw') !== -1) {
-          title = $('h2').text() === '' ? title : $('h2').text()
+        if (url.indexOf('tw') !== -1 && $('form[name="_newscontent_fromname"] h2').text() !== '') {
+          title = $('form[name="_newscontent_fromname"] h2').text()
         }
 
         // 清除新闻开头的空行

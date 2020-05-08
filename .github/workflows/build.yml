@@ -12,19 +12,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
-
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: 'Setup node'
         uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+      - name: 'Install NPM dependencies'
+        run: npm install
+      - name: 'Build election-vue'
+        run: npm run build      
         env:
           GH_TOKEN: ${{secrets.GH_TOKEN}}
-      - run: npm install
-      - run: npm run build
-      - run: npm test

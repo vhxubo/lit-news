@@ -1,8 +1,8 @@
 {
   "name": "lit-news",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "author": "vhxubo",
-  "description": "洛阳理工学院新闻客户端",
+  "description": "洛阳理工学院新闻客户端（第三方）",
   "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "洛理新闻客户端",
+    "productName": "LitNews",
     "appId": "com.vhxubo.litnews",
     "asar": true,
     "nsis": {

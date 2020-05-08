@@ -1,32 +1,19 @@
 <template>
-  <header class="toolbar toolbar-header">
-    <h1 class="title">{{ btnList[idx].name }}</h1>
-    <div class="toolbar-actions">
-      <div class="btn-group">
-        <button
-          :class="[idx == index ? 'active' : '']"
-          :key="index"
-          @click="isActive(index)"
-          class="btn btn-default"
-          v-for="(item, index) in btnList"
-        >{{ item.name }}</button>
-      </div>
-
-      <div class="btn-group pull-right">
-        <button @click="getAbout" class="btn btn-default">
-          <span class="icon icon-info"></span>
-        </button>
-        <button @click="openGithub" class="btn btn-default">
-          <span class="icon icon-github"></span>
-        </button>
-      </div>
-    </div>
-  </header>
+  <div class="header">
+    <ul class="header__btn-group">
+      <li
+        :class="[idx == index ? 'btn-active' : '']"
+        :key="index"
+        @click="isActive(index)"
+        class="btn btn-default"
+        v-for="(item, index) in btnList"
+      >{{ item.name }}</li>
+    </ul>
+  </div>
 </template>
 <script>
-import pkg from '../../../package.json'
 export default {
-  data () {
+  data() {
     return {
       idx: 0,
       btnList: [
@@ -37,30 +24,60 @@ export default {
     }
   },
   methods: {
-    isActive (index) {
+    isActive(index) {
       this.idx = index
       const newsUrl = this.btnList[index].url
       this.$bus.$emit('g-news-url', newsUrl)
-    },
-    getAbout () {
-      const version = pkg.version
-      this.$electron.remote.dialog.showMessageBox({
-        title: 'LitNews',
-        message: '洛理新闻客户端',
-        detail: `Version: ${version}\nAuthor: Vhxubo\nGithub: https://github.com/vhxubo/lit-news`
-      })
-    },
-    openGithub () {
-      this.$electron.remote.shell.openExternal('https://github.com/vhxubo/lit-news')
     }
   },
-  mounted () {
-    this.$nextTick(function () {
+  mounted() {
+    this.$nextTick(function() {
       const newsUrl = this.btnList[0].url
       this.$bus.$emit('g-news-url', newsUrl)
     })
   }
 }
 </script>
-<style scoped>
+<style lang="scss">
+.header {
+  display: flex;
+  font-size: 2.4rem;
+  flex-direction: column;
+  border-bottom: 1.5px solid #ebebeb;
+  height: 6.5rem;
+  justify-content: center;
+  user-select: none;
+
+  &__btn-group {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    cursor: pointer;
+
+    @media only screen and (min-width: 1300px) {
+      width: 25%;
+    }
+  }
+}
+.btn {
+  border: none;
+  background-color: inherit;
+  flex: 1;
+  text-align: center;
+
+  &:not(:last-child) {
+    border-right: 1px solid hsla(0, 0%, 59.2%, 0.2);
+  }
+
+  &:hover {
+    font-weight: 600;
+  }
+
+  &-active {
+    font-weight: 600;
+  }
+}
 </style>
+
